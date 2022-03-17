@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32228.430
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiendaEnLinea.Web", "TiendaEnLinea.Web\TiendaEnLinea.Web.csproj", "{30BA0109-CE90-43BD-AF41-95B88F9EBAAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiendaEnLinea.Api", "TiendaEnLinea.Api\TiendaEnLinea.Api.csproj", "{6C3590D4-C4B0-486F-A8C2-0DD038C1C22C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30BA0109-CE90-43BD-AF41-95B88F9EBAAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30BA0109-CE90-43BD-AF41-95B88F9EBAAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30BA0109-CE90-43BD-AF41-95B88F9EBAAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30BA0109-CE90-43BD-AF41-95B88F9EBAAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C3590D4-C4B0-486F-A8C2-0DD038C1C22C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C3590D4-C4B0-486F-A8C2-0DD038C1C22C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C3590D4-C4B0-486F-A8C2-0DD038C1C22C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C3590D4-C4B0-486F-A8C2-0DD038C1C22C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DF5E3FB0-FCD9-4111-846D-5FF3F56B31A0}
+	EndGlobalSection
+EndGlobal

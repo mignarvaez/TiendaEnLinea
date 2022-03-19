@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using TiendaEnLinea.Api.Data;
+using TiendaEnLinea.Api.Repositories.Contracts;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,10 +17,14 @@ builder.Services.AddSwaggerGen();
 // y estando en la carpeta del proyecto
 // Para correr la migración: dotnet ef database update o update-database
 // Se puede deshacer una migración usando update-database 0
-builder.Services.AddDbContext<TiendaEnLineaDbContext>(options =>
+builder.Services.AddDbContextPool<TiendaEnLineaDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("TiendaEnLineaConnection")) // Se indica la cadena de conexión
 );
 
+// Se registra el repositorio para que pueda ser usado por inyeccion de dependencias. Con la opcion scoped
+// Se determina que la misma instancia del objeto es inyectada entre las clases relevantes dentro de un peticion http particular
+// Una nueva instancia del objeto relevante sera creada para cada peticion http
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

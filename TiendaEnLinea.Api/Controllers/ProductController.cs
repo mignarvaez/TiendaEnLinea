@@ -56,5 +56,36 @@ namespace TiendaEnLinea.Api.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "Error obteniendo la información de la base de datos");
             }
         }
+
+        [HttpGet("{id:int}")]
+        public async Task<ActionResult<ProductDto>> GetItem(int id)
+        {
+            try
+            {
+                var product = await this.productRepository.GetItem(id);
+               
+
+                // Si el producto es nulo retorna un mensaje de codigo 400
+                if (product == null )
+                    return BadRequest();
+                else
+                {
+                    // Se obtiene la categoría del producto
+                    var productCategory = await this.productRepository.GetCategory(product.CategoryId); 
+                    
+                    // Se obtiene el productodto
+                    var productDto = product.ConvertToDto(productCategory);
+
+                    // Se retorna el producto con un mensaje de código 200
+                    return Ok(productDto);
+                }
+
+            }
+            catch (Exception)
+            {
+                // En caso de presentarse un error se enviara un mensaje de código 500
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error obteniendo la información de la base de datos");
+            }
+        }
     }
 }

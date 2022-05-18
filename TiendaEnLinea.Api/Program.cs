@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Net.Http.Headers;
 using TiendaEnLinea.Api.Data;
+using TiendaEnLinea.Api.Repositories;
 using TiendaEnLinea.Api.Repositories.Contracts;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,6 +27,7 @@ builder.Services.AddDbContextPool<TiendaEnLineaDbContext>(options =>
 // Se determina que la misma instancia del objeto es inyectada entre las clases relevantes dentro de un peticion http particular
 // Una nueva instancia del objeto relevante sera creada para cada peticion http
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IShoppingCartRepository,ShoppingCartRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -33,6 +36,13 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+// Se indica que desde la url de blazor se accedera a esta api
+app.UseCors(policy =>
+    policy.WithOrigins("https://localhost:7055", "http://localhost:7055")
+    .AllowAnyMethod()
+    .WithHeaders(HeaderNames.ContentType)
+);
 
 app.UseHttpsRedirection();
 

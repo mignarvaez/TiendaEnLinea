@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TiendaEnLinea.Web", "Tienda
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TiendaEnLinea.Api", "TiendaEnLinea.Api\TiendaEnLinea.Api.csproj", "{6C3590D4-C4B0-486F-A8C2-0DD038C1C22C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiendaEnLinea.Models", "TiendaEnLinea.Models\TiendaEnLinea.Models.csproj", "{0EF70920-4F59-4B02-BF51-13FC970A53CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TiendaEnLinea.Models", "TiendaEnLinea.Models\TiendaEnLinea.Models.csproj", "{0EF70920-4F59-4B02-BF51-13FC970A53CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

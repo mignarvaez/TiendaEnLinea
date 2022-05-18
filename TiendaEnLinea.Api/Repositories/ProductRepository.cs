@@ -29,15 +29,27 @@ namespace TiendaEnLinea.Api.Repositories.Contracts
            var categories = await this.tiendaEnLineaDbContext.ProductCategories.ToListAsync();
            return categories;
         }
-
-        public Task<IEnumerable<ProductCategory>> GetCategory(int id)
+        
+        /// <summary>
+        /// Retorna la categoria cuya id se pasa por parametro
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public async Task<ProductCategory> GetCategory(int id)
         {
-            throw new NotImplementedException();
+            var category = await this.tiendaEnLineaDbContext.ProductCategories.SingleOrDefaultAsync(c => c.Id == id);
+            return category;
         }
 
-        public Task<IEnumerable<Product>> GetItem(int id)
+        /// <summary>
+        /// Retorna un producto según su id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public async Task<Product> GetItem(int id)
         {
-            throw new NotImplementedException();
+            var product  = await this.tiendaEnLineaDbContext.Products.FindAsync(id);
+            return product;
         }
 
         /// <summary>

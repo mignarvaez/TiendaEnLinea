@@ -16,6 +16,7 @@ namespace TiendaEnLinea.Models.Dtos
         public int CartId { get; set; }
         public string ProductName { get; set; } = string.Empty; 
         public string ProductDescription { get; set; } = string.Empty;
+        public string ProductImageURL { get; set;}
         public decimal Price { get; set; }
         public decimal TotalPrice { get; set; }
         public int Quantity { get; set; }

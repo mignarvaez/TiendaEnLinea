@@ -10,8 +10,8 @@ namespace TiendaEnLinea.Api.Repositories.Contracts
         //Estos métodos seran asincronos y retornaran objetos task genericos
         Task<IEnumerable<Product>> GetItems();
         Task<IEnumerable<ProductCategory>> GetCategories();
-        Task<IEnumerable<Product>> GetItem(int id);
-        Task<IEnumerable<ProductCategory>> GetCategory(int id);
+        Task<Product> GetItem(int id);
+        Task<ProductCategory> GetCategory(int id);
 
     }
 }
